@@ -32,7 +32,6 @@ var main = function() {
                 {id: "1057", pref: 0.5, topic: "Opinion", checked: false},
                 {id: "1138", pref: 0.5, topic: "Television", checked: false},
                 {id: "1025", pref: 0.5, topic: "Environment", checked: false},
-                {id: "1046", pref: 0.5, topic: "Performing Arts", checked: false},
 		];
 		//TODO: show popup
 	}
@@ -50,7 +49,7 @@ var main = function() {
 	else {
 		var audio = document.getElementById("player_audio");
                 if (audio !== null) {
-                    audio.src = storyQueue[0].mp3link;
+                    audio.src = "test.mp3";
                     audio.load();
                 }
         }
@@ -69,6 +68,7 @@ var main = function() {
         for (var i = 0; i < prefs.length; i++) {
             $("#preferences").html($("#preferences").html()+"<div id=\""+i+"\" class=\"preference\">"+prefs[i].topic+"</div>");
             var prefElement = document.getElementById(parseInt(i));
+            $(prefElement).height($(prefElement).width());
             if (prefs[i].checked) {
                 prefElement.style.backgroundColor = "#596EAE";
             } else {

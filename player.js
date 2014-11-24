@@ -8,8 +8,9 @@ var thumbsUp = 0;
 
 $(document).ready(function() {
     var audio = document.getElementById("player_audio");
-    audio.addEventListener('timeupdate',function (){
-        $("#player_ProgressBar").width(audio.currentTime*100/audio.duration+"%");
+    audio.addEventListener('timeupdate',updateProgressBar, false);
+    $("#media_bar").bind("change", function() {
+        audio.currentTime = ($(this).val()/100)*audio.duration;
     });
     audio.addEventListener('ended',function (){
         feedback(storyQueue[0], 1+thumbsUp);
@@ -23,6 +24,11 @@ $(document).ready(function() {
         $("#player_btnPlay").html("<span class=\"typcn typcn-media-pause\" onclick=\"clickedPause()\"></span>");
     });
 });
+
+function updateProgressBar() {
+    var audio = document.getElementById("player_audio");
+    $("#media_bar").val(audio.currentTime*100/audio.duration);
+}
 
 function clickedPlay() {
     var audio = document.getElementById("player_audio");
