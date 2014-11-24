@@ -9,7 +9,6 @@ var main = function() {
         }
         
 	prefs = JSON.parse(localStorage.getItem('prefs'));
-        prefs = null;
 	if (!prefs) { //first time usage
 		prefs = [
 		{id: "1003", pref: 0.5, topic: "U.S. News", checked: false},
