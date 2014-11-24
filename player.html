@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <meta charset="windows-1252">
+        <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=no;" />
+        <meta name="MobileOptimized" content="width" />
+        <meta name="HandheldFriendly" content="true" />
+        <link href="player.css" rel="stylesheet"/>
+        <link rel='stylesheet' href='typicons/typicons.min.css'/>
+        <link href='http://fonts.googleapis.com/css?family=Lato:400,100' rel='stylesheet' type='text/css'>
+        <script src="jquery/jquery-1.11.0.min.js"></script>
+        <script src="js/jquery.marquee.min.js"></script>
+        <script src="parser.min.js"></script>
+        <script src="mynpr.js"></script>
+        <script src="xml2json.js"></script>
+        <script src="player.js"></script>
+        <link href="css/transition.css" rel="stylesheet" type="text/css"/>
+	<script type="text/javascript" src="js/fasw.transitions.min.js"></script>
+    </head>
+    <body>
+        <div id="prefModal">
+            <div id="prefModalMessage">
+                <div id="prefModalText">Would you like to set your preferences now?</div>
+                <a class="prefModalOption" href="preferences.html">Yes</a><a class="prefModalOption" onclick="clickedModal()">No</a>
+            </div>
+            
+        </div>
+        <div id="header_player">
+            <div id="header_title">My NPR</div>
+            <a class="header_nav header_navRight" href="preferences.html"><span class="typcn typcn-cog"></span></a>
+            <input type="range" id="media_bar">
+        </div>
+        <div id="queue">
+            <div class="queue_header"><span>Upcoming</span></div>
+            <div class="queue_item"><span id="news5" class="queue_itemText">Loading...</span></div>
+            <div class="queue_item"><span id="news4" class="queue_itemText">Loading...</span></div>
+            <div class="queue_item"><span id="news3" class="queue_itemText">Loading...</span></div>
+            <div class="queue_item"><span id="news2" class="queue_itemText">Loading...</span></div>
+            <div class="queue_item"><span id="news1" class="queue_itemText">Loading...</span></div>
+        </div>
+        <div id="player">
+            <audio id="player_audio"></audio>
+            <div id="player_controls">
+                <a class="player_btn"><span class="typcn typcn-thumbs-down" onclick="clickedDislike()"></span></a>
+                <a class="player_btn" id="player_btnLike"><span class="typcn typcn-thumbs-up" onclick="clickedLike_TurnOn()"></span></a>
+                <a class="player_btn"><span class="typcn typcn-media-rewind" onclick="clickedRewind()"></span></a>
+                <a class="player_btn" id="player_btnPlay"><span class="typcn typcn-media-play" onclick="clickedPlay()"></span></a>
+                <a class="player_btn"><span class="typcn typcn-media-fast-forward" onclick="clickedForward()"></span></a>
+            </div>
+        </div>
+    </body>
+</html>
