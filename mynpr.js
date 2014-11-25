@@ -48,7 +48,7 @@ var main = function() {
 	else {
 		var audio = document.getElementById("player_audio");
                 if (audio !== null) {
-                    audio.src = "test.mp3";
+                    audio.src = storyQueue[0].mp3link;
                     audio.load();
                 }
         }
@@ -78,9 +78,11 @@ var main = function() {
         $(".preference").on("click", function() {
                 if (!prefs[parseInt(this.id)].checked) {
                     this.style.backgroundColor = "#596EAE";
+                    prefs[parseInt(this.id)].pref += 5;
                     prefs[parseInt(this.id)].checked = true;
                 } else {
                     this.style.backgroundColor = "rgba(96, 96, 96, 0.7)";
+                    prefs[parseInt(this.id)].pref -= 5;
                     prefs[parseInt(this.id)].checked = false;
                 }
             });

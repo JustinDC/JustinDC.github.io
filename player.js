@@ -40,6 +40,7 @@ function clickedPause() {
     var audio = document.getElementById("player_audio");
     $("#player_btnPlay").html("<span class=\"typcn typcn-media-play\" onclick=\"clickedPlay()\"></span>");
     audio.pause();
+    updateProgressBar();
 };
 
 function clickedForward() {
@@ -87,7 +88,7 @@ function addStoryToUI(story) {
         audio.src = storyQueue[0].mp3link;
         audio.load();
     }
-    $("#news0").html(storyQueue[0].title);
+    $("#header_title").html(storyQueue[0].title);
     $("#news1").html(storyQueue[1].title);
     $("#news2").html(storyQueue[2].title);
     $("#news3").html(storyQueue[3].title);
